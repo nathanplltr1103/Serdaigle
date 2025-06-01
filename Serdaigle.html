@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Maison Serdaigle - Refonte</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div id="scroll-progress"></div>
+
+<header>
+  <nav>
+    <div class="logo-bloc">
+      <img src="logo.png" alt="Blason Serdaigle" />
+      <span>Maison Serdaigle</span>
+    </div>
+    <button id="burgerBtn" aria-label="Ouvrir le menu">&#9776;</button>
+    <ul id="nav-links">
+      <li><a href="#" class="active" onclick="showPage('accueil', this)">Accueil</a></li>
+      <li><a href="#" onclick="showPage('valeurs', this)">Nos Valeurs</a></li>
+      <li><a href="#" onclick="showPage('vie', this)">Vie à Serdaigle</a></li>
+      <li><a href="#" onclick="showPage('heritage', this)">Héritage</a></li>
+      <li class="dropdown">
+        <button tabindex="0">Découvrir plus ▼</button>
+        <ul>
+          <li><a href="#" onclick="showPage('identite', this)">Notre Identité</a></li>
+          <li><a href="#" onclick="showPage('personnalites', this)">Personnalités</a></li>
+          <li><a href="#" onclick="showPage('citations', this)">Citations</a></li>
+          <li><a href="#" onclick="showPage('enigmes', this)">Jeux & Énigmes</a></li>
+          <li><a href="#" onclick="showPage('ressources', this)">Ressources</a></li>
+        </ul>
+      </li>
+      <li><button id="darkModeBtn" aria-label="Mode sombre/clair">🌙</button></li>
+    </ul>
+  </nav>
+  <ul id="nav-mobile">
+    <li><a href="#" class="active" onclick="showPage('accueil', this);closeMobileMenu()">Accueil</a></li>
+    <li><a href="#" onclick="showPage('valeurs', this);closeMobileMenu()">Nos Valeurs</a></li>
+    <li><a href="#" onclick="showPage('vie', this);closeMobileMenu()">Vie à Serdaigle</a></li>
+    <li><a href="#" onclick="showPage('heritage', this);closeMobileMenu()">Héritage</a></li>
+    <li>
+      <details>
+        <summary>Découvrir plus</summary>
+        <ul>
+          <li><a href="#" onclick="showPage('identite', this);closeMobileMenu()">Notre Identité</a></li>
+          <li><a href="#" onclick="showPage('personnalites', this);closeMobileMenu()">Personnalités</a></li>
+          <li><a href="#" onclick="showPage('citations', this);closeMobileMenu()">Citations</a></li>
+          <li><a href="#" onclick="showPage('enigmes', this);closeMobileMenu()">Jeux & Énigmes</a></li>
+          <li><a href="#" onclick="showPage('ressources', this);closeMobileMenu()">Ressources</a></li>
+        </ul>
+      </details>
+    </li>
+  </ul>
+</header>
+
+<main>
+  <section id="page-accueil" class="page active">
+    <div class="hero-bg">
+      <div class="hero-text">
+      </div>
+    </div>
+    <div class="card">
+      <h2>Plus qu'une maison, une philosophie ✨</h2>
+      <p>Serdaigle, ce n’est pas juste de l’intelligence : c’est l’art de penser ensemble. La créativité est notre baguette, la solidarité notre potion secrète.</p>
+    </div>
+    <div class="card">
+      <h2>Nos valeurs fondatrices</h2>
+      <div>
+        <strong>🧠 Intelligence Collective</strong><br> Chaque Serdaigle éclaire les autres.<br><br>
+        <strong>🎨 Créativité Débridée</strong><br> Nous osons penser différemment.<br><br>
+        <strong>🤝 Soutien Magique</strong><br> L'entraide est notre sortilège favori.<br><br>
+        <strong>📚 Apprentissage Permanent</strong><br> Chaque jour est un nouveau parchemin.
+      </div>
+    </div>
+  </section>
+
+  <section id="page-identite" class="page">
+    <div class="card">
+      <h1>Notre Identité 🪄</h1>
+      <p>Serdaigle, c’est un esprit libre et curieux, mais aussi solidaire et bienveillant. Chaque élève est encouragé à explorer son potentiel unique.</p>
+      <h2>Éclater les stéréotypes 🧨</h2>
+      <p>Non, nous ne sommes pas tous des rats de bibliothèque arrogants. Nous sommes des explorateurs de la pensée, inspirés et ouverts.</p>
+      <h2>La force du collectif</h2>
+      <p>Les grandes idées naissent rarement seules. Chez nous, la magie est collaborative.</p>
+      <img src="identite.png" alt="Héritage" style="width:100%;margin:10px 0 20px 0;border-radius:14px;box-shadow:0 2px 12px #0a2a4d25;">
+    </div>
+  </section>
+
+  <section id="page-valeurs" class="page">
+    <div class="card">
+      <h1>Valeurs Fondamentales 🧬</h1>
+      <ul>
+        <li><strong>💡 Intelligence Collective</strong> – Des idées partagées et cultivées.</li>
+        <li><strong>✨ Créativité Magique</strong> – La pensée originale est notre ADN.</li>
+        <li><strong>🫂 Camaraderie</strong> – Nous avançons ensemble.</li>
+        <li><strong>📖 Curiosité Éternelle</strong> – Toujours apprendre, toujours grandir.</li>
+      </ul>
+      <img src="valeurs.png" alt="Héritage" style="width:100%;margin:10px 0 20px 0;border-radius:14px;box-shadow:0 2px 12px #0a2a4d25;">
+    </div>
+  </section>
+  <section id="page-vie" class="page">
+    <div class="card">
+      <h1>Vie à Serdaigle 🏰</h1>
+    <div class="image-grid">
+      <img src="salle_commune.png" alt="Salle commune">
+      <img src="travail.png" alt="Étudiants collaborant">
+      <img src="tour.png" alt="Vue depuis la Tour">
+    </div>
+      <h2>Traditions ✨</h2>
+      <ul>
+        <li>Défis d’énigmes entre maisons</li>
+        <li>Soirées d'observation du ciel étoilé 🌌</li>
+        <li>Inventaires d’idées, de sorts et d'inventions</li>
+      </ul>
+      <h2>Anecdotes</h2>
+      <p>Il est dit que la Dame Grise, notre fantôme, adore poser des énigmes aux élèves les plus curieux…</p>
+    </div>
+  </section>
+
+  <section id="page-heritage" class="page">
+    <div class="card">
+      <h1>Héritage 🪙 et Avenir 🚀</h1>
+      <h2>Figures historiques</h2>
+      <ul>
+        <li><strong>Rowena Serdaigle</strong> – Visionnaire et fondatrice</li>
+        <li><strong>Filius Flitwick</strong> – Maître du sortilège et mentor</li>
+        <li><strong>Luna Lovegood</strong> – L'imagination au pouvoir</li>
+        <li><strong>Garrick Ollivander</strong> – Artisan d'excellence</li>
+      </ul>
+      <h2>Notre Vision</h2>
+      <p>Porter l’héritage tout en ouvrant la voie : innovation, magie responsable, ouverture d'esprit.</p>
+      <img src="héritage.png" alt="Héritage" style="width:100%;margin:10px 0 20px 0;border-radius:14px;box-shadow:0 2px 12px #0a2a4d25;">
+    </div>
+  </section>
+
+  <section id="page-personnalites" class="page">
+    <div class="card">
+      <h1>Figures Marquantes 🧙‍♀️</h1>
+      <ul>
+        <li><strong>Rowena Serdaigle</strong> – L’intelligence incarnée</li>
+        <li><strong>Luna Lovegood</strong> – Reine des pensées libres</li>
+        <li><strong>Filius Flitwick</strong> – Professeur & légende</li>
+        <li><strong>Garrick Ollivander</strong> – Artiste du bois et de la magie</li>
+      </ul>
+      <img src="figures.png" alt="Héritage" style="width:100%;margin:10px 0 20px 0;border-radius:14px;box-shadow:0 2px 12px #0a2a4d25;">
+    </div>
+  </section>
+
+  <section id="page-citations" class="page">
+    <div class="card">
+      <h1>Inspirations 📝</h1>
+      <ul>
+        <li>« L’esprit sans bornes est le plus grand trésor de l’homme. » <br><span style="color:#b08d57;">– Rowena Serdaigle</span></li>
+        <li>« N’ayez pas peur d’être vous-même. »<br><span style="color:#b08d57;">– Luna Lovegood</span></li>
+        <li>« Il n’y a pas de honte à ne pas savoir, seulement à ne pas vouloir apprendre. »<br><span style="color:#b08d57;">– Filius Flitwick</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="page-enigmes" class="page">
+    <div class="card">
+      <h1>Jeux & Énigmes 🧩</h1>
+      <h2>Énigme du jour</h2>
+      <p id="enigme-texte">Quel est l’animal emblématique de Serdaigle ?</p>
+      <input id="enigme-input" type="text" placeholder="Votre réponse…">
+      <button onclick="checkEnigme()" class="btn">Valider</button>
+      <p id="enigme-feedback"></p>
+      <h2>Devinez la citation !</h2>
+      <p><em>« Il n’y a pas de honte à ne pas savoir… »</em></p>
+      <p>Qui a dit cela ?</p>
+      <button onclick="alert('Bravo ! Réponse : Filius Flitwick.')" class="btn">Voir la réponse</button>
+    </div>
+  </section>
+
+  <section id="page-ressources" class="page">
+    <div class="card">
+      <h1>Ressources 📚</h1>
+      <ul>
+        <li><a href="https://www.poudlard.org/maisons/serdaigle/" target="_blank">Dossier complet sur Serdaigle</a></li>
+        <li><a href="https://harrypotter.fandom.com/fr/wiki/Serdaigle" target="_blank">Wiki Harry Potter – Serdaigle</a></li>
+        <li>Lecture recommandée : <em>“L’Histoire de Poudlard”</em></li>
+        <li>Sorts favoris : <b>Wingardium Leviosa, Patronus, Alohomora</b></li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div>
+    <p>&copy; <span id="currentYear"></span> Maison Serdaigle, Poudlard.</p>
+    <p>Sagesse, Esprit, Créativité.</p>
+    <div>
+      <a href="#" onclick="showPage('accueil', document.querySelector('#nav-links a[onclick*=\'accueil\']'))">Accueil</a> |
+      <a href="#" onclick="showPage('valeurs', document.querySelector('#nav-links a[onclick*=\'valeurs\']'))">Nos Valeurs</a> |
+      <a href="#">Mentions Légales Fictives</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
